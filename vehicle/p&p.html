@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - rideCore Vehicle Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        a {
+            color: #0d6efd;
+        }
+        a:hover {
+            color: #0a58ca;
+        }
+        .container {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        h1, h2 {
+            color: #ffffff;
+        }
+        .accordion-button {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #333;
+            color: #fff;
+        }
+        .accordion-body {
+            background-color: #2d2d2d;
+            color: #e0e0e0;
+        }
+        .btn-back {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <?php include 'navbar.php'; ?>
+
+    <div class="container">
+        <h1 class="mb-4">Privacy Policy</h1>
+        <p>rideCore Vehicle Booking values your privacy. This policy explains how we collect, use, and protect your personal information.</p>
+
+        <div class="accordion" id="privacyAccordion">
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                        1. Information Collection
+                    </button>
+                </h2>
+                <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#privacyAccordion">
+                    <div class="accordion-body">
+                        We collect personal information such as name, email, phone number, and payment details when you register or make a booking on our platform.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                        2. Use of Information
+                    </button>
+                </h2>
+                <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#privacyAccordion">
+                    <div class="accordion-body">
+                        Your information is used to process bookings, provide customer support, send updates, and improve our services.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                        3. Data Security
+                    </button>
+                </h2>
+                <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#privacyAccordion">
+                    <div class="accordion-body">
+                        We implement appropriate security measures to protect your personal data from unauthorized access, alteration, or disclosure.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                        4. Sharing of Information
+                    </button>
+                </h2>
+                <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#privacyAccordion">
+                    <div class="accordion-body">
+                        rideCore does not sell or rent your personal information. We may share limited data with service providers for booking processing and delivery of services.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
+                        5. Cookies and Tracking
+                    </button>
+                </h2>
+                <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#privacyAccordion">
+                    <div class="accordion-body">
+                        Our website uses cookies and tracking technologies to enhance user experience, analyze traffic, and improve our services.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">
+                        6. User Rights
+                    </button>
+                </h2>
+                <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#privacyAccordion">
+                    <div class="accordion-body">
+                        Users have the right to access, update, or delete their personal information. You may contact us to request changes or removal of your data.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading7">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7">
+                        7. Policy Updates
+                    </button>
+                </h2>
+                <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#privacyAccordion">
+                    <div class="accordion-body">
+                        We may update this Privacy Policy periodically. Changes will be posted on this page. Continued use of our services constitutes acceptance of the updated policy.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Back Button -->
+        <div class="text-center btn-back">
+            <a href="services.php" class="btn btn-outline-primary"><i class="fas fa-arrow-left"></i> Back</a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <?php include 'footer.php'; ?>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
