@@ -163,6 +163,7 @@ $status_filter = isset($_GET['status']) ? $_GET['status'] : '';
                                         <th>End Time</th>
                                         <th>Status</th>
                                         <th>Amount</th>
+                                        <th>Payment</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -205,6 +206,23 @@ $status_filter = isset($_GET['status']) ? $_GET['status'] : '';
                                         <td><?php echo date('M d, Y h:i A', strtotime($row['end_time'])); ?></td>
                                         <td><?php echo $status_badge; ?></td>
                                         <td> ₹<?php echo number_format($row['total_amount'], 2); ?></td>
+                                        <td>
+                                                        <?php if($row['status'] == 'completed' && $row['payment_done'] == 0): ?>
+                                                            <form action="payment.php" method="POST">
+                                                                <input type="hidden" name="booking_id" value="<?php echo $row['booking_id']; ?>">
+                                                                <input type="hidden" name="amount" value="<?php echo $row['total_amount']; ?>">
+                                                                <button type="submit" class="btn btn-sm btn-primary">
+                                                                    Pay ₹<?php echo number_format($row['total_amount'], 2); ?>
+                                                                </button>
+                                                            </form>
+                                                        <?php elseif($row['payment_done'] == 1): ?>
+                                                            <span class="badge bg-success">Paid</span>
+                                                        <?php else: ?>
+                                                            <span class="badge bg-secondary">Not Available</span>
+                                                        <?php endif; ?>
+                                                    </td>
+
+
                                         <td>
                                             <a href="view_booking.php?id=<?php echo $row['booking_id']; ?>" class="btn btn-sm btn-info">
                                                 <i class="fas fa-eye"></i>

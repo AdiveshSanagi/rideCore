@@ -57,7 +57,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="hero-image-container">
-                        <img src="assets/images/home.jpg" alt="Vehicle Booking" class="img-fluid animated">
+                        <img src="assets/images/thar.jpg" alt="Vehicle Booking" class="img-fluid animated">
                     </div>
                 </div>
             </div>

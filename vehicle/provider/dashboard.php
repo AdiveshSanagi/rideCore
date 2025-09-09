@@ -103,6 +103,9 @@ $stats = $booking->getProviderStats();
                     ['title'=>'Pending Requests','value'=>$stats['pending_requests']??0,'class'=>'bg-secondary','link'=>'bookings.php?status=pending'],
                     ['title'=>'Accepted Requests','value'=>$stats['accepted_requests']??0,'class'=>'bg-success','link'=>'bookings.php?status=accepted'],
                     ['title'=>'Completed Bookings','value'=>$stats['completed_bookings']??0,'class'=>'bg-warning','link'=>'bookings.php?status=completed'],
+                    ['title'=>'Cancelled Bookings','value'=>$stats['cancelled_bookings']??0,'class'=>'bg-danger','link'=>'bookings.php?status=cancelled'],
+                    ['title'=>'Pending Payments','value'=>$stats['pending_payments']??0,'class'=>'bg-dark','link'=>'payments.php?status=pending'],
+                    ['title'=>'Completed Payments','value'=>$stats['completed_payments']??0,'class'=>'bg-success','link'=>'payments.php?status=completed'],
                     ['title'=>'Total Earnings','value'=>"₹".number_format($stats['total_earnings']??0,2),'class'=>'bg-info','link'=>'reports.php']
                 ];
 
@@ -140,6 +143,7 @@ $stats = $booking->getProviderStats();
                                     <th>End</th>
                                     <th>Status</th>
                                     <th>Amount</th>
+                                    <th>Payments</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -168,6 +172,15 @@ $stats = $booking->getProviderStats();
                                     <td><?php echo date('M d, Y h:i A', strtotime($row['end_time'])); ?></td>
                                     <td><span class="badge <?php echo $status_class; ?>"><?php echo ucfirst($row['status']); ?></span></td>
                                     <td>₹<?php echo number_format($row['total_amount'],2); ?></td>
+                                    <td>
+                                            <?php if($row['payment_done'] == 1): ?>
+                                                <span class="badge bg-success">Paid</span>
+                                            <?php elseif($row['status'] == 'accepted'): ?>
+                                                <span class="badge bg-warning">Unpaid</span>
+                                            <?php else: ?>
+                                                <span class="badge bg-secondary">Not Available</span>
+                                            <?php endif; ?>
+</td>
                                     <td>
                                         <a href="view_booking.php?id=<?php echo $row['booking_id']; ?>" class="btn btn-sm btn-info">
                                             <i class="fas fa-eye"></i>
