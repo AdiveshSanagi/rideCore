@@ -99,11 +99,14 @@ $stats = $booking->getProviderStats();
     <div class="row mt-4">
         <?php
         $cards = [
-            ['title'=>'Total Requests','value'=>$stats['total_requests']??0,'class'=>'bg-primary','link'=>'bookings.php'],
-            ['title'=>'Accepted Requests','value'=>$stats['accepted_requests']??0,'class'=>'bg-success','link'=>'bookings.php?status=accepted'],
-            ['title'=>'Completed Bookings','value'=>$stats['completed_bookings']??0,'class'=>'bg-warning','link'=>'bookings.php?status=completed'],
-            ['title'=>'Total Earnings','value'=>"₹".number_format($stats['total_earnings']??0,2),'class'=>'bg-info','link'=>'reports.php']
-        ];
+                    ['title'=>'Total Requests','value'=>$stats['total_requests']??0,'class'=>'bg-primary','link'=>'bookings.php'],
+                    ['title'=>'Pending Requests','value'=>$stats['pending_requests']??0,'class'=>'bg-secondary','link'=>'bookings.php?status=pending'],
+                    ['title'=>'Accepted Requests','value'=>$stats['accepted_requests']??0,'class'=>'bg-success','link'=>'bookings.php?status=accepted'],
+                    ['title'=>'Completed Bookings','value'=>$stats['completed_bookings']??0,'class'=>'bg-warning','link'=>'bookings.php?status=completed'],
+                    ['title'=>'Total Earnings','value'=>"₹".number_format($stats['total_earnings']??0,2),'class'=>'bg-info','link'=>'reports.php']
+                ];
+
+       
         foreach($cards as $card): ?>
         <div class="col-md-3">
             <div class="card <?php echo $card['class']; ?> text-white mb-4">

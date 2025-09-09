@@ -103,13 +103,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if(empty($start_time_err) && empty($end_time_err) && empty($pickup_location_err) && empty($dropoff_location_err)) {
         if($vehicle->isAvailableForBooking($start_time, $end_time)) {
             // Set booking properties
-            $booking->customer_id = $_SESSION["user_id"];
-            $booking->vehicle_id = $vehicle->vehicle_id;
-            $booking->start_time = $start_time;
-            $booking->end_time = $end_time;
-            $booking->pickup_location = $pickup_location;
-            $booking->dropoff_location = $dropoff_location;
-            $booking->total_amount = $total_amount;
+                $booking->customer_id = $_SESSION["user_id"];
+                $booking->vehicle_id = $vehicle->vehicle_id;
+                $booking->start_time = $start_time;
+                $booking->end_time = $end_time;
+                $booking->pickup_location = $pickup_location;
+                $booking->dropoff_location = $dropoff_location;
+                $booking->total_amount = $total_amount;
+                $booking->status = "pending"; // ✅ FIX added
+
             
             // Create booking
             if($booking->create()) {
